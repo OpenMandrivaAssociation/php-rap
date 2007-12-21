@@ -22,6 +22,7 @@ Patch2:     %{name}-0.9.1.MoveNext.patch
 Patch3:     %{name}-0.9.1.add.patch
 Requires:   php-adodb >= 1:4.64-1mdk
 BuildArch:  noarch
+BuildRoot:  %{_tmppath}/%{name}-%{version}
 
 %description
 RAP is a software package for parsing, searching, manipulating, serializing and
