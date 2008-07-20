@@ -1,28 +1,25 @@
-%define base_name   rap 
-%define name        php-%{base_name}
-%define version     0.9.4
-%define fileversion 094
-%define release     %mkrel 2
+%define base_name rap 
+%define fileversion 096
 
 # php dependencies extraction is utterly stupid, it consider every external 
 # statement as pear dependency
-%define _requires_exceptions pear(/usr/share/php-adodb/adodb.inc.php)
+%define _requires_exceptions pear(/usr/share/php-adodb/adodb.inc.php)\\|pear(config.php)
 
-Name:       %{name}
-Version:    %{version}
-Release:    %{release}
-Summary:    RDF API for PHP
-License:    LGPL
-Group:      Development/Other
-URL:        http://www.wiwiss.fu-berlin.de/suhl/bizer/rdfapi
-Source:     http://prdownloads.sourceforge.net/rdfapi-php/%{base_name}-v%{fileversion}.tar.bz2
-Patch0:     %{name}-0.9.1.fhs.patch
-Patch1:     %{name}-0.9.4.external-adodb.patch
-Patch2:     %{name}-0.9.1.MoveNext.patch
-Patch3:     %{name}-0.9.1.add.patch
-Requires:   php-adodb >= 1:4.64-1mdk
-BuildArch:  noarch
-BuildRoot:  %{_tmppath}/%{name}-%{version}
+Summary:	RDF API for PHP
+Name:		php-%{base_name}
+Version:	0.9.6
+Release:	%mkrel 1
+License:	LGPL
+Group:		Development/Other
+URL:		http://www.wiwiss.fu-berlin.de/suhl/bizer/rdfapi
+Source:		http://prdownloads.sourceforge.net/rdfapi-php/%{base_name}-v%{fileversion}.zip
+Patch0:		%{name}-fhs.diff
+Patch1:		%{name}-0.9.4.external-adodb.patch
+Patch2:		%{name}-0.9.1.MoveNext.patch
+Patch3:		%{name}-add.diff
+Requires:	php-adodb >= 1:4.64-1mdk
+BuildArch:	noarch
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 RAP is a software package for parsing, searching, manipulating, serializing and
@@ -46,12 +43,18 @@ Its features include:
 * drawing graph visualizations
 
 %prep
+
 %setup -q -n rdfapi-php
+
+for i in `find . -type d -name .svn`; do
+    if [ -e "$i" ]; then rm -rf $i; fi >&/dev/null
+done
+
 %patch0 -p 1
 %patch1 -p 1
 %patch2 -p 1
 %patch3 -p 0
-find . -type d -name CVS | xargs rm -rf
+
 find . -type f | perl -ne 'chomp; print "$_\n" if -T $_' | xargs perl -pi -e 'tr/\r//d'
 rm -rf api/util/adodb
 
@@ -59,6 +62,7 @@ rm -rf api/util/adodb
 
 %install
 rm -rf %{buildroot}
+
 install -d -m 755 %{buildroot}%{_datadir}/%{name}
 install -d -m 755 %{buildroot}%{_sysconfdir}/%{name}
 cp -pr api %{buildroot}%{_datadir}/%{name}
@@ -82,4 +86,3 @@ rm -rf %{buildroot}
 %doc doc/*
 %{_datadir}/%{name}
 %config(noreplace) %{_sysconfdir}/%{name}
-
