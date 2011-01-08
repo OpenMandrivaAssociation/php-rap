@@ -15,7 +15,7 @@ URL:		http://www.wiwiss.fu-berlin.de/suhl/bizer/rdfapi
 Source:		http://prdownloads.sourceforge.net/rdfapi-php/%{base_name}-v%{fileversion}.zip
 Patch0:		%{name}-fhs.diff
 Patch1:		%{name}-0.9.4.external-adodb.patch
-Patch2:		%{name}-0.9.1.MoveNext.patch
+Patch2:		%{name}-0.9.6.MoveNext.patch
 Patch3:		%{name}-add.diff
 Requires:	php-adodb >= 1:4.64-1mdk
 BuildArch:	noarch
