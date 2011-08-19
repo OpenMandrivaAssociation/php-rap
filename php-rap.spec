@@ -8,7 +8,7 @@
 Summary:	RDF API for PHP
 Name:		php-%{base_name}
 Version:	0.9.6
-Release:	%mkrel 8
+Release:	%mkrel 9
 License:	LGPL
 Group:		Development/Other
 URL:		http://www.wiwiss.fu-berlin.de/suhl/bizer/rdfapi
