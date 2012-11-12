@@ -1,0 +1,10 @@
+--- rdfapi-php/api/rdql/RdqlDbEngine.php.orig	2008-02-29 16:21:34.000000000 +0000
++++ rdfapi-php/api/rdql/RdqlDbEngine.php	2011-01-08 05:29:22.000000000 +0000
+@@ -225,6 +225,7 @@
+  */
+  function filterQueryResult(&$recordSet) {
+    $queryResult=array();
++   if(!$recordSet) return $queryResult;
+ 
+    if (isset($this->parsedQuery['filters'])) {
+ 

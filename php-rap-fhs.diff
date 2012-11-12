@@ -1,0 +1,132 @@
+diff -Naur rdfapi-php/netapi/netapi.php rdfapi-php.oden/netapi/netapi.php
+--- rdfapi-php/netapi/netapi.php	2008-02-29 15:57:26.000000000 +0100
++++ rdfapi-php.oden/netapi/netapi.php	2008-07-20 17:29:49.000000000 +0200
+@@ -21,7 +21,7 @@
+  * @access public
+  */
+ 
+-include_once 'config.inc.php';
++include("/etc/rap/netapi.conf");
+ include_once 'fetch.php';
+ include_once 'rdql.php';
+ include_once 'spo.php';
+diff -Naur rdfapi-php/tools/rdfdb-utils/addnamesp.php rdfapi-php.oden/tools/rdfdb-utils/addnamesp.php
+--- rdfapi-php/tools/rdfdb-utils/addnamesp.php	2008-02-29 15:57:26.000000000 +0100
++++ rdfapi-php.oden/tools/rdfdb-utils/addnamesp.php	2008-07-20 17:31:30.000000000 +0200
+@@ -17,7 +17,7 @@
+ $needTables=true;
+ $needModel=true;
+ 
+-include("config.inc.php"); 
++include("/etc/rap/rdfdb-utils.conf"); 
+ include("utils.php");
+ 
+ include("setup.php");
+diff -Naur rdfapi-php/tools/rdfdb-utils/add.php rdfapi-php.oden/tools/rdfdb-utils/add.php
+--- rdfapi-php/tools/rdfdb-utils/add.php	2008-02-29 15:57:26.000000000 +0100
++++ rdfapi-php.oden/tools/rdfdb-utils/add.php	2008-07-20 17:31:30.000000000 +0200
+@@ -17,7 +17,7 @@
+ $needTables=true;
+ $needModel=true;
+ 
+-include("config.inc.php"); 
++include("/etc/rap/rdfdb-utils.conf"); 
+ include("utils.php");
+ 
+ include("setup.php");
+diff -Naur rdfapi-php/tools/rdfdb-utils/choseDB.php rdfapi-php.oden/tools/rdfdb-utils/choseDB.php
+--- rdfapi-php/tools/rdfdb-utils/choseDB.php	2008-02-29 15:57:26.000000000 +0100
++++ rdfapi-php.oden/tools/rdfdb-utils/choseDB.php	2008-07-20 17:31:30.000000000 +0200
+@@ -14,7 +14,7 @@
+ 
+ 
+ 
+-include("config.inc.php"); 
++include("/etc/rap/rdfdb-utils.conf"); 
+ include("utils.php"); 
+ include("setup.php");
+ 
+diff -Naur rdfapi-php/tools/rdfdb-utils/createTables.php rdfapi-php.oden/tools/rdfdb-utils/createTables.php
+--- rdfapi-php/tools/rdfdb-utils/createTables.php	2008-02-29 15:57:26.000000000 +0100
++++ rdfapi-php.oden/tools/rdfdb-utils/createTables.php	2008-07-20 17:31:30.000000000 +0200
+@@ -15,7 +15,7 @@
+ 
+ $needDB=true;
+ 
+-include("config.inc.php"); 
++include("/etc/rap/rdfdb-utils.conf"); 
+ 
+ include("utils.php");
+ 
+diff -Naur rdfapi-php/tools/rdfdb-utils/listModels.php rdfapi-php.oden/tools/rdfdb-utils/listModels.php
+--- rdfapi-php/tools/rdfdb-utils/listModels.php	2008-02-29 15:57:26.000000000 +0100
++++ rdfapi-php.oden/tools/rdfdb-utils/listModels.php	2008-07-20 17:31:30.000000000 +0200
+@@ -17,7 +17,7 @@
+ $needDB=true;
+ $needTables=true;
+ 
+-include("config.inc.php"); 
++include("/etc/rap/rdfdb-utils.conf"); 
+ include("utils.php");
+ 
+ include("setup.php");
+diff -Naur rdfapi-php/tools/rdfdb-utils/model.php rdfapi-php.oden/tools/rdfdb-utils/model.php
+--- rdfapi-php/tools/rdfdb-utils/model.php	2008-02-29 15:57:26.000000000 +0100
++++ rdfapi-php.oden/tools/rdfdb-utils/model.php	2008-07-20 17:31:30.000000000 +0200
+@@ -17,7 +17,7 @@
+ $needTables=true;
+ $needModel=true;
+ 
+-include("config.inc.php"); 
++include("/etc/rap/rdfdb-utils.conf"); 
+ include("utils.php");
+ 
+ include("setup.php");
+diff -Naur rdfapi-php/tools/rdfdb-utils/n3.php rdfapi-php.oden/tools/rdfdb-utils/n3.php
+--- rdfapi-php/tools/rdfdb-utils/n3.php	2008-02-29 15:57:26.000000000 +0100
++++ rdfapi-php.oden/tools/rdfdb-utils/n3.php	2008-07-20 17:31:30.000000000 +0200
+@@ -17,7 +17,7 @@
+ $needTables=true;
+ $needModel=true;
+ 
+-include("config.inc.php"); 
++include("/etc/rap/rdfdb-utils.conf"); 
+ include("utils.php");
+ 
+ include("setup.php");
+diff -Naur rdfapi-php/tools/rdfdb-utils/namesp.php rdfapi-php.oden/tools/rdfdb-utils/namesp.php
+--- rdfapi-php/tools/rdfdb-utils/namesp.php	2008-02-29 15:57:26.000000000 +0100
++++ rdfapi-php.oden/tools/rdfdb-utils/namesp.php	2008-07-20 17:31:30.000000000 +0200
+@@ -16,7 +16,7 @@
+ $needTables=true;
+ $needModel=true;
+ 
+-include("config.inc.php");
++include("/etc/rap/rdfdb-utils.conf");
+ include("utils.php");
+ 
+ include("setup.php");
+diff -Naur rdfapi-php/tools/rdfdb-utils/query.php rdfapi-php.oden/tools/rdfdb-utils/query.php
+--- rdfapi-php/tools/rdfdb-utils/query.php	2008-02-29 15:57:26.000000000 +0100
++++ rdfapi-php.oden/tools/rdfdb-utils/query.php	2008-07-20 17:31:30.000000000 +0200
+@@ -16,7 +16,7 @@
+ $needTables=true;
+ $needModel=true;
+ 
+-include("config.inc.php"); 
++include("/etc/rap/rdfdb-utils.conf"); 
+ include("utils.php");
+ 
+ include("setup.php");
+diff -Naur rdfapi-php/tools/rdfdb-utils/rdf.php rdfapi-php.oden/tools/rdfdb-utils/rdf.php
+--- rdfapi-php/tools/rdfdb-utils/rdf.php	2008-02-29 15:57:26.000000000 +0100
++++ rdfapi-php.oden/tools/rdfdb-utils/rdf.php	2008-07-20 17:31:30.000000000 +0200
+@@ -17,7 +17,7 @@
+ $needTables=true;
+ $needModel=true;
+ 
+-include("config.inc.php"); 
++include("/etc/rap/rdfdb-utils.conf"); 
+ include("utils.php");
+ 
+ include("setup.php");

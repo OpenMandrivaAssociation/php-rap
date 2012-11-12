@@ -1,0 +1,11 @@
+--- api/model/DbModel.php	2008-02-29 15:57:44.000000000 +0100
++++ api/model/DbModel.php.oden	2008-07-20 17:36:30.000000000 +0200
+@@ -1298,7 +1298,7 @@
+ 	function _insertRow ($row) {
+ 
+ 	$quotedObject = $this->dbConn->qstr($row[2]);
+-	$sql = "INSERT INTO statements VALUES
++	$sql = "INSERT INTO statements (modelID,subject,predicate,object,l_language,l_datatype,subject_is,object_is) VALUES
+ 	(" .$this->modelID .","
+ 	."'" .$row[0] ."',"
+ 	."'" .$row[1] ."',"

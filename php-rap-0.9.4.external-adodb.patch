@@ -1,0 +1,11 @@
+diff -Naur rdfapi-php/api/model/DBase.php rdfapi-php.external_adodb/api/model/DBase.php
+--- rdfapi-php/api/model/DBase.php	2006-05-15 07:24:36.000000000 +0200
++++ rdfapi-php.external_adodb/api/model/DBase.php	2006-08-03 09:00:50.000000000 +0200
+@@ -13,5 +13,5 @@
+ // Include DBase class
+ require_once( RDFAPI_INCLUDE_DIR . 'model/DbModel.php' );
+ // include adodb classes
+-require_once(RDFAPI_INCLUDE_DIR .'util/adodb/adodb.inc.php');
++require_once('/usr/share/php-adodb/adodb.inc.php');
+ ?>
+\ No newline at end of file
