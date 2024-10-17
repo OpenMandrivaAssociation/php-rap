@@ -7,7 +7,7 @@ Version:	0.9.6
 Release:	11
 License:	LGPL
 Group:		Development/Other
-URL:		http://www.wiwiss.fu-berlin.de/suhl/bizer/rdfapi
+URL:		https://www.wiwiss.fu-berlin.de/suhl/bizer/rdfapi
 Source:		http://prdownloads.sourceforge.net/rdfapi-php/%{base_name}-v%{fileversion}.zip
 Patch0:		%{name}-fhs.diff
 Patch1:		%{name}-0.9.4.external-adodb.patch
